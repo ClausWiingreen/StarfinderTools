@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { binarySearch } from './binarySearch';
 import { InfluentialAssociate } from './influential-associate';
 import { INFLUENTIALASSOCIATES } from './influential-associates';
 
@@ -14,6 +15,6 @@ export class InfluentialAssociateService {
   }
 
   getRandomInfluentialAssociate() : InfluentialAssociate {
-    return INFLUENTIALASSOCIATES[Math.floor(Math.random()*INFLUENTIALASSOCIATES.length)];
+    return binarySearch(INFLUENTIALASSOCIATES, Math.random()*100, associate => associate.weight);
   }
 }

@@ -1,3 +1,4 @@
 export interface PartyRelationship {
-  description : string;
+  description: string;
+  weight: number;
 }

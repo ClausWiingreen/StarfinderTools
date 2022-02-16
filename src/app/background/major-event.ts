@@ -1,3 +1,4 @@
 export interface MajorEvent {
-  description : string
+  description : string;
+  weight: number;
 }

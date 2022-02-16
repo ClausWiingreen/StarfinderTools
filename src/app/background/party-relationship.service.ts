@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { binarySearch } from './binarySearch';
 import { PartyRelationship } from './party-relationship';
 import { PARTYRELATIONSHIPS } from './party-relationships';
 
@@ -13,6 +14,6 @@ export class PartyRelationshipService {
     return PARTYRELATIONSHIPS;
   }
   getRandomPartyRelationship(): PartyRelationship {
-    return PARTYRELATIONSHIPS[Math.floor(Math.random()*PARTYRELATIONSHIPS.length)];
+    return binarySearch(PARTYRELATIONSHIPS, Math.random()*100, relationship => relationship.weight);
   }
 }
