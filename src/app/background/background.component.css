@@ -1,0 +1,16 @@
+.headers-align{
+  flex-basis: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 8px;
+}
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 0;
+}
+
+.mat-expansion-panel-header-title {
+  flex-basis: 0;
+  flex-grow: 0.4;
+}

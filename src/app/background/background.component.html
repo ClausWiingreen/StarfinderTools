@@ -1,0 +1,69 @@
+<mat-card>
+  <div>
+    <button mat-button (click)="background=generateRandom()">Generate Random</button>
+    <button mat-button (click)="accordion && accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion && accordion.closeAll()">Collapse All</button>
+  </div>
+  <mat-accordion multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Home World
+        </mat-panel-title>
+        <mat-panel-description>
+          {{background.homeWorld.description.split('.')[0]}}.
+          <mat-icon>
+            <fa-icon [icon]="homeWorldLock ? faLock : faLockOpen"></fa-icon>
+          </mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{background.homeWorld.description}}</p>
+      <button mat-button (click)="homeWorldLock = !homeWorldLock">Toggle Lock</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Major Event
+        </mat-panel-title>
+        <mat-panel-description>
+          {{background.majorEvent.description.split('.')[0]}}.
+          <mat-icon>
+            <fa-icon [icon]="majorEventLock ? faLock : faLockOpen"></fa-icon>
+          </mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{background.majorEvent.description}}</p>
+      <button mat-button (click)="majorEventLock = !majorEventLock">Toggle Lock</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Influential Associate
+        </mat-panel-title>
+        <mat-panel-description>
+          {{background.influentialAssociate.description.split('.')[0]}}.
+          <mat-icon>
+            <fa-icon [icon]="influentialAssociateLock ? faLock : faLockOpen"></fa-icon>
+          </mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{background.influentialAssociate.description}}</p>
+      <button mat-button (click)="influentialAssociateLock = !influentialAssociateLock">Toggle Lock</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Party Relationship
+        </mat-panel-title>
+        <mat-panel-description>
+          {{background.partyRelationship.description.split('.')[0]}}.
+          <mat-icon>
+            <fa-icon [icon]="partyRelationshipLock ? faLock : faLockOpen"></fa-icon>
+          </mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{background.partyRelationship.description}}</p>
+      <button mat-button (click)="partyRelationshipLock = !partyRelationshipLock">Toggle Lock</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
