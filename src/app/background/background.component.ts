@@ -5,7 +5,7 @@ import { InfluentialAssociateService } from './influential-associate.service';
 import { MajorEventService } from './major-event.service';
 import { PartyRelationshipService } from './party-relationship.service';
 import { faLock, faLockOpen } from '@fortawesome/free-solid-svg-icons';
-import {MatAccordion} from '@angular/material/expansion';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-background',
@@ -15,7 +15,7 @@ import {MatAccordion} from '@angular/material/expansion';
 export class BackgroundComponent implements OnInit {
   faLock = faLock;
   faLockOpen = faLockOpen;
-  background : Background = this.generateRandom()
+  background: Background = this.generateRandom()
   homeWorldLock = false;
   majorEventLock = false;
   influentialAssociateLock = false;
@@ -23,7 +23,7 @@ export class BackgroundComponent implements OnInit {
   @ViewChild(MatAccordion) accordion?: MatAccordion;
 
   constructor(
-    private homeWorldService: HomeWorldService, 
+    private homeWorldService: HomeWorldService,
     private majorEventService: MajorEventService,
     private influentialAssociateService: InfluentialAssociateService,
     private partyRelationshipService: PartyRelationshipService) { }
@@ -32,17 +32,17 @@ export class BackgroundComponent implements OnInit {
   }
 
   generateRandom(): Background {
-    var background : Background = {
+    var background: Background = {
       homeWorld: this.homeWorldLock ? this.background.homeWorld : this.homeWorldService.getRandomHomeWorld(),
       majorEvent: this.majorEventLock ? this.background.majorEvent : this.majorEventService.getRandomMajorEvent(),
       influentialAssociate: this.influentialAssociateLock ? this.background.influentialAssociate : this.influentialAssociateService.getRandomInfluentialAssociate(),
       partyRelationship: this.partyRelationshipLock ? this.background.partyRelationship : this.partyRelationshipService.getRandomPartyRelationship()
     };
-    
+
     return background;
   }
 
-  togglePartyRelationshipLock():void{
+  togglePartyRelationshipLock(): void {
     this.partyRelationshipLock = !this.partyRelationshipLock;
   }
 }

@@ -1,3 +1,4 @@
 export interface InfluentialAssociate {
-  description : string;
+  description: string;
+  weight: number;
 }

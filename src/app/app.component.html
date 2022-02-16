@@ -2,11 +2,32 @@
 <mat-tab-group mat-align-tabs="start">
   <mat-tab label="Character Background Generator">
     <ng-template matTabContent>
-      <app-background></app-background>
+      <mat-card>
+        <app-background></app-background>
+      </mat-card>
     </ng-template>
   </mat-tab>
   <mat-tab label="Character Generator">
-    <app-character-generator></app-character-generator>
+    <ng-template matTabContent>
+      <mat-card>
+        <app-character-generator></app-character-generator>
+      </mat-card>
+    </ng-template>
   </mat-tab>
-  <mat-tab label="World Generator">World Generator</mat-tab>
+  <mat-tab label="World Generator">
+    <ng-template matTabContent>
+      <mat-card>
+        World Generator
+      </mat-card>
+    </ng-template>
+  </mat-tab>
 </mat-tab-group>
+
+<mat-card>
+  <div><a href="https://github.com/ClausWiingreen/StarfinderTools">
+      <fa-icon [icon]="faGithub"></fa-icon>
+    </a></div>
+  <div>
+    Copyright (C) Claus Wiingreen 2022
+  </div>
+</mat-card>
