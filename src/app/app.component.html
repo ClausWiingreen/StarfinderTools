@@ -1,37 +1,34 @@
-<mat-toolbar color="primary"><span>{{title}}</span></mat-toolbar>
-<mat-tab-group mat-align-tabs="start">
-  <mat-tab label="Character Background Generator">
-    <ng-template matTabContent>
-      <mat-card>
-        <app-background></app-background>
-      </mat-card>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Character Generator">
-    <ng-template matTabContent>
-      <mat-card>
-        <app-character-generator></app-character-generator>
-      </mat-card>
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="World Generator">
-    <ng-template matTabContent>
-      <mat-card>
-        World Generator
-      </mat-card>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
+<mat-sidenav-container autosize>
+  <mat-sidenav fixedInViewport="true" opened mode="side">
+    <mat-selection-list [multiple]="false">
+      <a routerLink="/">
+        <mat-list-item>
+          {{title}}
+        </mat-list-item>
+      </a>
+      <a *ngFor="let r of router.config" routerLink="{{r.path}}">
+        <mat-list-option [selected]="r.path===router.url.substring(1)">
+          {{nameLookup(r)}}
+        </mat-list-option>
+      </a>
+    </mat-selection-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    <mat-card class="footer">
+      <p>
+        {{title}} uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy
+        (paizo.com/communityuse). We are expressly prohibited from charging you to use or access this content. {{title}}
+        is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo
+        products, visit paizo.com.
+      </p>
 
-<mat-card>
-  <p>
-    {{title}} uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy (paizo.com/communityuse). We are expressly prohibited from charging you to use or access this content. {{title}} is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo products, visit paizo.com.
-  </p>
-
-  <div><a href="https://github.com/ClausWiingreen/StarfinderTools">
-      <fa-icon [icon]="faGithub"></fa-icon>
-    </a></div>
-  <div>
-    Copyright (C) Claus Wiingreen 2022
-  </div>
-</mat-card>
+      <div><a href="https://github.com/ClausWiingreen/StarfinderTools">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a></div>
+      <div>
+        Copyright (C) Claus Wiingreen 2022
+      </div>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>
