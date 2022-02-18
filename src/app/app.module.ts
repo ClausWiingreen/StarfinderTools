@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CharacterGeneratorComponent } from './character-generator/character-generator.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
