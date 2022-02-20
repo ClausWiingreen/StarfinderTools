@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
-import { binarySearch } from './binarySearch';
+import { AbstractEntityService } from './AbstractEntityService';
 import { InfluentialAssociate } from './influential-associate';
 import { INFLUENTIALASSOCIATES } from './influential-associates';
 
 @Injectable({
   providedIn: 'root'
 })
-export class InfluentialAssociateService {
+export class InfluentialAssociateService extends AbstractEntityService<InfluentialAssociate> {
+  constructor() {
+    super();
+  }
 
-  constructor() { }
-
-  getInfluentialAssociates() : InfluentialAssociate[] {
+  protected getAllEntities(): InfluentialAssociate[] {
     return INFLUENTIALASSOCIATES;
   }
 
-  getRandomInfluentialAssociate() : InfluentialAssociate {
-    return binarySearch(INFLUENTIALASSOCIATES, Math.random()*100, associate => associate.weight);
+  getRandomInfluentialAssociate(): InfluentialAssociate {
+    return this.getRandomEntity(associate => associate.weight);
   }
 }
