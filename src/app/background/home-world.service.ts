@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HOMEWORLDS } from './home-worlds';
 import { HomeWorld } from './home-world';
-import { binarySearch } from './binarySearch';
 import { AbstractEntityService } from './AbstractEntityService';
 
 @Injectable({
