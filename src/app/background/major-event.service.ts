@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MajorEvent } from './major-event';
 import { MAJOREVENTS } from './major-events';
-import { AbstractEntityService } from './AbstractEntityService';
+import { AbstractEntityService } from '../AbstractEntityService';
 
 @Injectable({
   providedIn: 'root'

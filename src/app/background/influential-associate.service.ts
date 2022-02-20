@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractEntityService } from './AbstractEntityService';
+import { AbstractEntityService } from '../AbstractEntityService';
 import { InfluentialAssociate } from './influential-associate';
 import { INFLUENTIALASSOCIATES } from './influential-associates';
 

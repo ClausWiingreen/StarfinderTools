@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractEntityService } from './AbstractEntityService';
+import { AbstractEntityService } from '../AbstractEntityService';
 import { PartyRelationship } from './party-relationship';
 import { PARTYRELATIONSHIPS } from './party-relationships';
 

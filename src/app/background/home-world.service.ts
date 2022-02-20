@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HOMEWORLDS } from './home-worlds';
 import { HomeWorld } from './home-world';
-import { AbstractEntityService } from './AbstractEntityService';
+import { AbstractEntityService } from '../AbstractEntityService';
 
 @Injectable({
   providedIn: 'root'
