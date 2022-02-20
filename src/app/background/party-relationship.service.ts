@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { binarySearch } from './binarySearch';
+import { AbstractEntityService } from '../AbstractEntityService';
 import { PartyRelationship } from './party-relationship';
 import { PARTYRELATIONSHIPS } from './party-relationships';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PartyRelationshipService {
-
-  constructor() { }
-
-  getPartyRelationships() : PartyRelationship[]{
+export class PartyRelationshipService extends AbstractEntityService<PartyRelationship> {
+  constructor() {
+    super();
+  }
+  
+  protected getAllEntities(): PartyRelationship[] {
     return PARTYRELATIONSHIPS;
   }
+
   getRandomPartyRelationship(): PartyRelationship {
-    return binarySearch(PARTYRELATIONSHIPS, Math.random()*100, relationship => relationship.weight);
+    return this.getRandomEntity(relationship => relationship.weight);
   }
 }

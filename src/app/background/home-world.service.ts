@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HOMEWORLDS } from './home-worlds';
 import { HomeWorld } from './home-world';
-import { binarySearch } from './binarySearch';
+import { AbstractEntityService } from '../AbstractEntityService';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HomeWorldService {
+export class HomeWorldService extends AbstractEntityService<HomeWorld>{
+  constructor() { 
+    super();
+  }
 
-  constructor() { }
+  protected getAllEntities(): HomeWorld[] { 
+    return HOMEWORLDS; 
+  }
 
-  getHomeWorlds(): HomeWorld[] { return HOMEWORLDS; }
   getRandomHomeWorld(): HomeWorld {
-    return binarySearch(HOMEWORLDS, Math.random()*100, homeWorld => homeWorld.weight);
+    return this.getRandomEntity(world => world.weight);
   }
 }

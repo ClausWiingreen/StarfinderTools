@@ -1,1 +1,47 @@
-<p>character-generator works!</p>
+<mat-card>
+    <div>
+        <button mat-button (click)="character=generateRandom()">Generate Random</button>
+        <button mat-button (click)="accordion && accordion.openAll()">Expand All</button>
+        <button mat-button (click)="accordion && accordion.closeAll()">Collapse All</button>
+    </div>
+    <mat-accordion multi>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Name
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{character.name.value}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            {{character.name.value}}
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Species
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{character.race.name}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            {{character.race.name}}
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Quirk
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{character.quirk.description}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            {{character.quirk.description}}
+        </mat-expansion-panel>
+    </mat-accordion>
+    <p style="margin-top: 1em">
+        Data for this generator is from the <a
+            href="https://paizo.com/products/btq027ud?Starfinder-Galaxy-Exploration-Manual">Starfinder Galaxy
+            Exploration Manual</a> copyright Paizo Inc.
+    </p>
+</mat-card>
